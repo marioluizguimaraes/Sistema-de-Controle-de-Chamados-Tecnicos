@@ -37,9 +37,9 @@
    - Cada entidade possui atributos específicos e métodos para manipulação.
 
 2. **Funcionalidades Específicas** 🔧:
-   - Abertura e fechamento de chamados técnicos. 🛠️
-   - Atribuição de técnicos aos chamados. 👨‍🔧
-   - Controle de status e prioridade dos chamados. ⚡
+   - Abertura e fechamento de chamados técnicos. 
+   - Atribuição de técnicos aos chamados.
+   - Controle de status e prioridade dos chamados.
 
 3. **Relatórios** 📊:
    - Geração de relatórios de atendimento, listando todos os chamados com seus respectivos clientes e status.
