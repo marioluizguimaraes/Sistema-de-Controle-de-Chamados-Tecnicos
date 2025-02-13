@@ -21,10 +21,10 @@
 
 📚 O **Sistema de Controle de Chamados Técnicos** foi desenvolvido para gerenciar chamados técnicos em uma empresa ou organização. Ele permite:
 
-- Cadastro, edição, exclusão e consulta de clientes, técnicos e chamados. 📋
-- Controle de status (`Aberto`, `Em atendimento`, `Concluído`) e prioridade (`Alta`, `Média`, `Baixa`). ⚙️
-- Geração de relatórios de atendimento. 📊
-- Persistência de dados em arquivos `.csv`. 💾
+- Cadastro, edição, exclusão e consulta de clientes, técnicos e chamados.
+- Controle de status (`Aberto`, `Em atendimento`, `Concluído`) e prioridade (`Alta`, `Média`, `Baixa`).
+- Geração de relatórios de atendimento.
+- Persistência de dados em arquivos `.csv`.
 
 🧱 O sistema é implementado em **Kotlin**, utilizando princípios de POO, como encapsulamento, herança, polimorfismo e interfaces.
 
