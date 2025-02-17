@@ -10,5 +10,8 @@ class Cliente(
     var endereco: String
 ) : Pessoa(nome, cpf, email, telefone) {
 
-
+    fun abrirChamado(chamado: Chamado) {
+        chamado.status = "Aberto"
+        chamado.dataAbertura = Date()
+    }
 }
