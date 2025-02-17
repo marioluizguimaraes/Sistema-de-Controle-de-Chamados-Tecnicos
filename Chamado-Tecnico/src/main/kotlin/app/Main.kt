@@ -4,6 +4,6 @@ import models.*
 import services.Sistema
 
 fun main() {
-    val sistema = Sistema()
+    print("ola mundo")
 
 }
