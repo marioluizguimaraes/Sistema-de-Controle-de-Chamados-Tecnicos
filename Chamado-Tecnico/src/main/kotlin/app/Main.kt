@@ -1,9 +1,9 @@
 package app
 
 import models.*
-import services.SistemaChamados
+import services.Sistema
 
 fun main() {
-    val sistema = SistemaChamados()
+    val sistema = Sistema()
 
 }
