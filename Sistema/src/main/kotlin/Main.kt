@@ -9,4 +9,8 @@ fun main() {
 
     sistema.cadastrarCliente(cliente1)
     sistema.cadastrarTecnico(tecnico1)
+
+    print(sistema.listarClientes())
+    print(sistema.listarTecnicos())
+
 }
