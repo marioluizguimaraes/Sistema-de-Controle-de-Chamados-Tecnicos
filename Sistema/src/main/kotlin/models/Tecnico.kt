@@ -8,7 +8,4 @@ class Tecnico(
     var especialidade: String
 ) : Pessoa(nome, cpf, email, telefone) {
 
-    fun atenderChamado(chamado: Chamado) {
-        chamado.status = "Em atendimento"
-    }
 }

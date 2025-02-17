@@ -4,6 +4,7 @@ import java.util.*
 
 class Chamado(
     var id: Int,
+    val Nome: String,
     var descricao: String,
     var status: String = "Novo",
     var prioridade: String,
