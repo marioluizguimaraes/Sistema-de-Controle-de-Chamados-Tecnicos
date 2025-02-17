@@ -9,12 +9,4 @@ fun main() {
 
     sistema.cadastrarCliente(cliente1)
     sistema.cadastrarTecnico(tecnico1)
-
-    val chamado1 = Chamado(1, "Internet não funciona", "Novo", "Alta", cliente1)
-    sistema.abrirChamado(chamado1)
-
-    tecnico1.atenderChamado(chamado1)
-    sistema.fecharChamado(chamado1)
-
-    sistema.gerarRelatorioAtendimento()
 }
