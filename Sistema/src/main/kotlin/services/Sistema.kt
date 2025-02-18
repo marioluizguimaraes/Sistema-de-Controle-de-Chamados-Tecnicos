@@ -17,6 +17,18 @@ class SistemaChamados {
     fun cadastrarTecnico(tecnico: Tecnico) {
         tecnicos.add(tecnico)
     }
+
+    fun cadastrarChamado(chamado: Chamado){
+        chamados.add(chamado)
+    }
+
+    fun listarChamados(): String{
+        val chamadoList = StringBuilder()
+        for (chamado in chamados){
+            chamadoList.append(chamado.toString())
+        }
+        return chamadoList.toString()
+    }
     fun listarClientes(): String {
         val clientesList = StringBuilder()
         for (cliente in clientes) {
