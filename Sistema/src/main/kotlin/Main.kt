@@ -35,8 +35,10 @@ fun main() {
     sistema.cadastrarTecnico(tecnico1)
     sistema.cadastrarChamado(chamado1)
 
-    print(sistema.listarClientes())
-    print(sistema.listarTecnicos())
+    //print(sistema.listarClientes())
+    //print(sistema.listarTecnicos())
+
     print(sistema.listarChamados())
+    sistema.
 
 }

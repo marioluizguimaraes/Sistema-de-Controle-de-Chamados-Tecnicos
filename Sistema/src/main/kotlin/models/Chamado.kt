@@ -11,21 +11,29 @@ class Chamado(
     private var dataAbertura: String,
     private var dataConclusao: String? = null
 ){
-    private fun estadoAtual(): String{
+    fun getStatus(): String{
 
         val statusAtual:String = when(this.status){
             "Aberto" -> "Na fila"
-            "Andamento" -> "Esta sendo atendido"
-            else -> "Concluido na data ${this.dataConclusao}"
+            "Andamento" -> "Em atendimento"
+            else -> "Finalizado na data ${this.dataConclusao}"
         }
 
         return statusAtual
+    }
+
+    fun setStatus(status: String){
+        if ((status != "") && ((status != "Aberto") || (status != "Andamento") || (status != "Finalizado"))){
+            println("valor '${status}' não é válido para este campo!")
+        } else{
+            this.status = status
+        }
     }
 
     override fun toString(): String {
         return ("Id: ${this.id} | Nome: ${this.nome} | Status: ${this.status} | Prioridade: ${this.prioridade}\n" +
                 "Cliente: ${this.cliente.nome} | Técnico: ${this.tecnico.nome}\n" +
                 "Descrição: ${this.descricao}\n" +
-                "Aberto no dia ${this.dataAbertura} | ${this.estadoAtual()}\n")
+                "Aberto no dia ${this.dataAbertura} | ${this.getStatus()}\n")
     }
 }

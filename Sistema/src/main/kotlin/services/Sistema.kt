@@ -3,7 +3,6 @@ package services
 import models.Chamado
 import models.Cliente
 import models.Tecnico
-import java.util.Date
 
 class SistemaChamados {
     private val clientes = mutableListOf<Cliente>()
