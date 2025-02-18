@@ -39,6 +39,5 @@ fun main() {
     //print(sistema.listarTecnicos())
 
     print(sistema.listarChamados())
-    sistema.
 
 }
