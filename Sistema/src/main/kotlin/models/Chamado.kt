@@ -1,15 +1,15 @@
 package models
 
 class Chamado(
-    var id: Int,
-    val nome: String,
-    var descricao: String,
-    var status: String = "Aberto",
-    var prioridade: String,
-    var cliente: Cliente,
-    var tecnico: Tecnico,
-    var dataAbertura: String,
-    var dataConclusao: String? = null
+    private var id: Int,
+    private val nome: String,
+    private var descricao: String,
+    private var status: String = "Aberto",
+    private var prioridade: String,
+    private var cliente: Cliente,
+    private var tecnico: Tecnico,
+    private var dataAbertura: String,
+    private var dataConclusao: String? = null
 ){
     private fun estadoAtual(): String{
 
