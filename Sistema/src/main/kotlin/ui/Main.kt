@@ -7,7 +7,7 @@ import services.SistemaChamados
 fun main() {
     val sistema = SistemaChamados()
 
-    readln()
+
 
     /*sistema.cadastrarCliente(
         1,
@@ -26,6 +26,7 @@ fun main() {
         "Serrambi II, Rua Desportista Jeremias Farias Lacerda, 1630, 59091250, Apartamento 202 do Bloco 21, Natal, Rio Grande do Norte"
     )*/
 
+    sistema.cadastrarCliente()
     sistema.cadastrarCliente()
 
     print("lista de clientes cadastrados: \n${sistema.listarClientes()}\n")

@@ -1,6 +1,7 @@
 package models
 
 class Tecnico(
+    id: Int,
     nome: String,
     cpf: String,
     email: String,
