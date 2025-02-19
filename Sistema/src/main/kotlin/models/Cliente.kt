@@ -2,6 +2,7 @@ package models
 
 
 class Cliente(
+    id: Int,
     nome: String,
     cpf: String,
     email: String,

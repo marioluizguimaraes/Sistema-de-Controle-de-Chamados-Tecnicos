@@ -7,45 +7,27 @@ import services.SistemaChamados
 fun main() {
     val sistema = SistemaChamados()
 
-    val cliente1 = Cliente(
-        "João Silva",
-        "12345678900",
-        "joao@email.com",
-        "11987654321",
-        "Rua A, 123"
-    )
-    val cliente2 = Cliente(
-        "João Silva",
-        "12345678900",
-        "joao@email.com",
-        "11987654321",
-        "Rua A, 123"
-    )
+    readln()
 
-    val tecnico1 = Tecnico(
-        "Carlos Souza",
-        "98765432100",
-        "carlos@email.com",
-        "11912345678",
-        "Redes"
+    /*sistema.cadastrarCliente(
+        1,
+        "Mário Luiz",
+        "706.649.100-70",
+        "mario@email.com",
+        "(84) 9999-3334",
+        "Serrambi II, Rua Desportista Jeremias Farias Lacerda, 1630, 59091250, Apartamento 303 do Bloco 13, Natal, Rio Grande do Norte"
     )
-    val chamado1 = Chamado(
+    sistema.cadastrarCliente(
         2,
-        "Concerto Drone Mini 3",
-        "drone mini 3 com eixo quebrado",
-        "Andamento",
-        "Urgente",
-        cliente1,
-        tecnico1,
-        "01/02/2025"
-    )
+        "João Silva",
+        "345.674.723-42",
+        "joao@email.com",
+        "(84) 9999-3333",
+        "Serrambi II, Rua Desportista Jeremias Farias Lacerda, 1630, 59091250, Apartamento 202 do Bloco 21, Natal, Rio Grande do Norte"
+    )*/
 
-    sistema.cadastrarCliente(cliente1)
-    sistema.cadastrarCliente(cliente2)
-    sistema.cadastrarTecnico(tecnico1)
-    sistema.cadastrarChamado(chamado1)
+    sistema.cadastrarCliente()
 
-    print("lista de Técnicos cadastrados: \n${sistema.listarTecnicos()}\n")
     print("lista de clientes cadastrados: \n${sistema.listarClientes()}\n")
 
 }
