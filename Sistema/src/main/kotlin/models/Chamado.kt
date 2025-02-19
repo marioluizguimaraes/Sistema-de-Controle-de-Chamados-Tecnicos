@@ -32,7 +32,7 @@ class Chamado(
 
     override fun toString(): String {
         return ("Id: ${this.id} | Nome: ${this.nome} | Status: ${this.status} | Prioridade: ${this.prioridade}\n" +
-                "Cliente: ${this.cliente.nome} | Técnico: ${this.tecnico.nome}\n" +
+                "Cliente: ${cliente.nome} | Técnico: ${tecnico.nome}\n" +
                 "Descrição: ${this.descricao}\n" +
                 "Aberto no dia ${this.dataAbertura} | ${this.getStatus()}\n")
     }

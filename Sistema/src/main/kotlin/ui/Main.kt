@@ -1,3 +1,5 @@
+package ui
+
 import models.*
 import services.SistemaChamados
 
@@ -6,6 +8,13 @@ fun main() {
     val sistema = SistemaChamados()
 
     val cliente1 = Cliente(
+        "João Silva",
+        "12345678900",
+        "joao@email.com",
+        "11987654321",
+        "Rua A, 123"
+    )
+    val cliente2 = Cliente(
         "João Silva",
         "12345678900",
         "joao@email.com",
@@ -32,12 +41,11 @@ fun main() {
     )
 
     sistema.cadastrarCliente(cliente1)
+    sistema.cadastrarCliente(cliente2)
     sistema.cadastrarTecnico(tecnico1)
     sistema.cadastrarChamado(chamado1)
 
-    //print(sistema.listarClientes())
-    //print(sistema.listarTecnicos())
-
-    print(sistema.listarChamados())
+    print("lista de Técnicos cadastrados: \n${sistema.listarTecnicos()}\n")
+    print("lista de clientes cadastrados: \n${sistema.listarClientes()}\n")
 
 }
