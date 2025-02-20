@@ -22,10 +22,10 @@ object Forms {
                 if (parsedId != null) {
                     id = parsedId
                 } else {
-                    println("ID inválido. Tente novamente.")
+                    println("⚠ ID inválido. Tente novamente.")
                 }
             } else {
-                println("Entrada inválida. Tente novamente.")
+                println("⚠ Entrada inválida. Tente novamente.")
             }
         }
 
@@ -33,7 +33,7 @@ object Forms {
             print("Digite o nome do cliente: ")
             nome = readln() ?: ""
             if (nome.isEmpty()) {
-                println("Nome inválido. Tente novamente.")
+                println("⚠ Nome inválido. Tente novamente.")
             }
         }
 
@@ -41,7 +41,7 @@ object Forms {
             print("Digite o CPF do cliente: ")
             cpf = readln() ?: ""
             if (cpf.isEmpty()) {
-                println("CPF inválido. Tente novamente.")
+                println("⚠ CPF inválido. Tente novamente.")
             }
         }
 
@@ -49,7 +49,7 @@ object Forms {
             print("Digite o email do cliente: ")
             email = readln() ?: ""
             if (email.isEmpty()) {
-                println("Email inválido. Tente novamente.")
+                println("⚠ Email inválido. Tente novamente.")
             }
         }
 
@@ -57,7 +57,7 @@ object Forms {
             print("Digite o telefone do cliente: ")
             telefone = readln() ?: ""
             if (telefone.isEmpty()) {
-                println("Telefone inválido. Tente novamente.")
+                println("⚠ Telefone inválido. Tente novamente.")
             }
         }
 
@@ -65,7 +65,7 @@ object Forms {
             print("Digite o endereço do cliente: ")
             endereco = readln() ?: ""
             if (endereco.isEmpty()) {
-                println("Endereço inválido. Tente novamente.")
+                println("⚠ Endereço inválido. Tente novamente.")
             }
         }
         println("Cliente cadastrado com sucesso!")
@@ -88,10 +88,10 @@ object Forms {
                 if (parsedId != null) {
                     id = parsedId
                 } else {
-                    println("ID inválido! Tente novamente!")
+                    println("⚠ ID inválido! Tente novamente!")
                 }
             } else {
-                println("Entrada inválida! Tente novamente!")
+                println("⚠ Entrada inválida! Tente novamente!")
             }
         }
 
@@ -99,7 +99,7 @@ object Forms {
             print("Digite o nome do Técnico: ")
             nome = readln() ?: ""
             if (nome.isEmpty()) {
-                println("Nome inválido! Tente novamente!")
+                println("⚠ Nome inválido! Tente novamente!")
             }
         }
 
@@ -107,7 +107,7 @@ object Forms {
             print("Digite o CPF do Técnico: ")
             cpf = readln() ?: ""
             if (cpf.isEmpty()) {
-                println("CPF inválido! Tente novamente!")
+                println("⚠ CPF inválido! Tente novamente!")
             }
         }
 
@@ -115,7 +115,7 @@ object Forms {
             print("Digite o email do Técnico: ")
             email = readln() ?: ""
             if (email.isEmpty()) {
-                println("Email inválido! Tente novamente!")
+                println("⚠ Email inválido! Tente novamente!")
             }
         }
 
@@ -123,15 +123,15 @@ object Forms {
             print("Digite o telefone do Técnico: ")
             telefone = readln() ?: ""
             if (telefone.isEmpty()) {
-                println("Telefone inválido! Tente novamente!")
+                println("⚠ Telefone inválido! Tente novamente!")
             }
         }
 
         while (especialidade.isEmpty()) {
-            print("Digite o endereço do Técnico: ")
+            print("Digite o especialidade do Técnico: ")
             especialidade = readln() ?: ""
             if (especialidade.isEmpty()) {
-                println("Especialidade inválida! Tente novamente!")
+                println("⚠ Especialidade inválida! Tente novamente!")
             }
         }
 
@@ -157,10 +157,10 @@ object Forms {
                 if (parsedId != null) {
                     id = parsedId
                 } else {
-                    println("ID inválido! Tente novamente!")
+                    println("⚠ ID inválido! Tente novamente!")
                 }
             } else {
-                println("Entrada inválida! Tente novamente!")
+                println("⚠ Entrada inválida! Tente novamente!")
             }
         }
 
@@ -168,7 +168,7 @@ object Forms {
             print("Digite o nome do chamado: ")
             nome = readlnOrNull() ?: ""
             if (nome.isEmpty()) {
-                println("Nome inválido! Tente novamente!")
+                println("⚠ Nome inválido! Tente novamente!")
             }
         }
 
@@ -180,10 +180,10 @@ object Forms {
                 if (parsedId != null) {
                     idCliente = parsedId
                 } else {
-                    println("ID inválido! Tente novamente!")
+                    println("⚠ ID inválido! Tente novamente!")
                 }
             } else {
-                println("Entrada inválida! Tente novamente!")
+                println("⚠ Entrada inválida! Tente novamente!")
             }
         }
 
@@ -195,10 +195,10 @@ object Forms {
                 if (parsedId != null) {
                     idTecnico = parsedId
                 } else {
-                    println("ID inválido! Tente novamente!")
+                    println("⚠ ID inválido! Tente novamente!")
                 }
             } else {
-                println("Entrada inválida! Tente novamente!")
+                println("⚠ Entrada inválida! Tente novamente!")
             }
         }
 
@@ -206,7 +206,7 @@ object Forms {
             print("Digite a descrição do chamado: ")
             descricao = readln() ?: ""
             if (descricao.isEmpty()) {
-                println("Descrição inválido! Tente novamente!")
+                println("⚠ Descrição inválido! Tente novamente!")
             }
         }
 
@@ -214,7 +214,7 @@ object Forms {
             print("Digite o status atual do chamado: ")
             status = readln() ?: ""
             if (status.isEmpty()) {
-                println("Status inválido! Tente novamente!")
+                println("⚠ Status inválido! Tente novamente!")
             }
         }
 
@@ -223,7 +223,7 @@ object Forms {
             prioridade = readln() ?: ""
             if (prioridade.isEmpty() || (prioridade != "Alta" && prioridade != "Média" && prioridade != "Baixa")) {
                 prioridade = ""
-                println("Prioridade inválido! Tente novamente!")
+                println("⚠ Prioridade inválido! Tente novamente!")
             }
         }
 

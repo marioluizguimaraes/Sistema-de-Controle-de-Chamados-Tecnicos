@@ -1,7 +1,7 @@
 package models
 
 class Tecnico(
-    id: Int,
+    val id: Int,
     nome: String,
     cpf: String,
     email: String,
@@ -10,7 +10,7 @@ class Tecnico(
 ) : Pessoa(nome, cpf, email, telefone) {
 
     override  fun toString(): String{
-        return ("Nome: ${this.nome}, CPF: ${this.cpf}, Email: ${this.email}, Telefone: ${this.telefone}, Especialidade: ${this.especialidade}\n")
+        return ("Id: ${this.id} Nome: ${this.nome}, CPF: ${this.cpf}, Email: ${this.email}, Telefone: ${this.telefone}, Especialidade: ${this.especialidade}\n")
     }
 
 }
