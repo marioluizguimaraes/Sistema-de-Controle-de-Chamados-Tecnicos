@@ -16,7 +16,7 @@ fun main() {
             "/cadastrar técnico" -> sistema.cadastrarTecnico(Forms.tecnico())
             "/cadastrar chamado" -> sistema.cadastrarChamado(Forms.chamado())
             "/listar clientes" -> println("Lista de clientes cadastrados: \n${sistema.listarClientes()}")
-            "/listar tecnicos" -> println("Lista de técnicos cadastrados: \n${ sistema.listarTecnicos()}")  
+            "/listar tecnicos" -> println("Lista de técnicos cadastrados: \n${ sistema.listarTecnicos()}")
             "/listar chamados" -> println("Lista de chamados cadastrados: \n${ sistema.listarChamados()}")
             "/sair" -> println("${sistema.desligar()}Desligando sistema...")
             else -> println("Comando inválido!")
