@@ -24,11 +24,13 @@ fun main() {
 
     */
 
-    sistema.cadastrarCliente(Forms.cliente())
-    sistema.cadastrarTecnico(Forms.tecnico())
+    //sistema.cadastrarCliente(Forms.cliente())
+    //sistema.cadastrarTecnico(Forms.tecnico())
+    sistema.cadastrarChamado(Forms.chamado())
 
 
     print("\n lista de clientes cadastrados: \n${sistema.listarClientes()}\n")
+    print("\n lista de chamados cadastrados: \n${ sistema.listarChamados()}\n")
 
 }
 

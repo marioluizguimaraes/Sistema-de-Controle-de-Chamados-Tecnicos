@@ -24,7 +24,7 @@ class SistemaChamados {
     fun listarChamados(): String{
         val chamadoList = StringBuilder()
         for (chamado in chamados){
-            chamadoList.append(chamado.toString())
+            chamadoList.append("> ${chamado.toString()}")
         }
         return chamadoList.toString()
     }
@@ -45,14 +45,5 @@ class SistemaChamados {
         return tecnicosList.toString()
     }
 
-    /* fun validaCPF(cpf:String): Boolean{
-        
-        if ( ){
-            return true
-        }
-        else{
-            return false
-        }
 
-    }*/
 }
