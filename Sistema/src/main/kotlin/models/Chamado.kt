@@ -28,4 +28,5 @@ class Chamado(
                 "Descrição: ${this.descricao}\n" +
                 "Aberto no dia ${this.dataAbertura} | ${this.getStatus()}\n")
     }
+    //falta fazer a função para adicionar os chamados na lista de chamado do cliente e do tecnico na hora de adcionar
 }

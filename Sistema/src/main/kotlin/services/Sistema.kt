@@ -69,19 +69,31 @@ class SistemaChamados {
         return comandos.toString()
     }
 
+
     fun listarChamadosDoCliente(id: Int): String{
-        val cliente = clientes[id]
         val chamadosDoCliente = StringBuilder()
 
-        for (idChamado in cliente.getIdChamados()){
-
-            for (chamado in chamados){
-                if( idChamado == chamado.getIdChamado())
-                    chamadosDoCliente.append("> ${chamado.toString()}\n")
-                    break
+        for (cliente in clientes){
+            if (cliente.getIdCliente() == id){
+                for (idChamado in cliente.getIdChamados()){
+                    for (chamado in chamados){
+                        if( idChamado == chamado.getIdChamado())
+                            chamadosDoCliente.append("> ${chamado.toString()}\n")
+                        break
+                    }
                 }
+                break
             }
+        }
         return chamadosDoCliente.toString()
     }
+
+    fun encontrarCliente(id: Int):String{
+        for (cliente in clientes){
+            if (id == cliente.getIdCliente()) return cliente.getNomeCliente()
+        }
+        return "Cliente não encontrado!"
+    }
+
 
 }

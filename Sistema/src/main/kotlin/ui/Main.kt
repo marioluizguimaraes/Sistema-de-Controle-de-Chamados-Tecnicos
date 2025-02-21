@@ -12,14 +12,17 @@ fun main() {
 
         when(entradaDeComando){
             "/help" -> println(sistema.listarComando())
-            "/cadastrar cliente" -> sistema.cadastrarCliente(Forms.cliente())
-            "/cadastrar técnico" -> sistema.cadastrarTecnico(Forms.tecnico())
-            "/cadastrar chamado" -> sistema.cadastrarChamado(Forms.chamado())
+            "/cadastrar cliente" -> sistema.cadastrarCliente(Forms.novoCliente())
+            "/cadastrar técnico" -> sistema.cadastrarTecnico(Forms.novoTecnico())
+            "/cadastrar chamado" -> sistema.cadastrarChamado(Forms.novoChamado())
             "/listar clientes" -> println("Lista de clientes cadastrados: \n${sistema.listarClientes()}")
             "/listar tecnicos" -> println("Lista de técnicos cadastrados: \n${ sistema.listarTecnicos()}")
             "/listar chamados" -> println("Lista de chamados cadastrados: \n${ sistema.listarChamados()}")
+            
+            "/chamados do cliente" -> println("Lista de chamados de ${sistema.encontrarCliente(Forms.idClinete())} ${sistema.listarChamadosDoCliente(Forms.idClinete())}:")
+
             "/sair" -> println("${sistema.desligar()}Desligando sistema...")
-            //falta fazer a função para adicionar os chamados na lista de chamado do cliente e do tecnico na hora de adcionar
+
             else -> println("Comando inválido!")
         }
     }

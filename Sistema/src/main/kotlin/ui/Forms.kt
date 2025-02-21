@@ -6,7 +6,7 @@ import models.Tecnico
 
 object Forms {
 
-    fun cliente(): Cliente{
+    fun novoCliente(): Cliente{
         var id: Int = -1
         var nome: String = ""
         var cpf: String = ""
@@ -72,7 +72,7 @@ object Forms {
         return Cliente(id, nome, cpf, email, telefone, endereco)
     }
 
-    fun tecnico(): Tecnico {
+    fun novoTecnico(): Tecnico {
         var id: Int = -1
         var nome: String = ""
         var cpf: String = ""
@@ -138,7 +138,7 @@ object Forms {
         return Tecnico(id, nome, cpf, email, telefone, especialidade)
     }
 
-    fun chamado(): Chamado {
+    fun novoChamado(): Chamado {
         var id: Int = -1
         var nome: String = ""
         var descricao: String = ""
@@ -229,5 +229,23 @@ object Forms {
 
         return Chamado(id, nome, descricao, status, prioridade, idCliente, idTecnico, dataAbertura, dataConclusao)
     }
-
+    fun idClinete(): Int{
+        print("Digite o ID do cliente: ")
+        var id:Int = -1
+        while (id == -1) {
+            print("Digite o ID do cliente: ")
+            val inputId = readln()
+            if (inputId != null) {
+                val parsedId = inputId.toInt()
+                if (parsedId != null) {
+                    id = parsedId
+                } else {
+                    println("⚠ ID inválido! Tente novamente!")
+                }
+            } else {
+                println("⚠ Entrada inválida! Tente novamente!")
+            }
+        }
+        return id
+    }
 }
