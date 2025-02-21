@@ -19,6 +19,7 @@ fun main() {
             "/listar tecnicos" -> println("Lista de técnicos cadastrados: \n${ sistema.listarTecnicos()}")
             "/listar chamados" -> println("Lista de chamados cadastrados: \n${ sistema.listarChamados()}")
             "/sair" -> println("${sistema.desligar()}Desligando sistema...")
+            ""
             else -> println("Comando inválido!")
         }
     }

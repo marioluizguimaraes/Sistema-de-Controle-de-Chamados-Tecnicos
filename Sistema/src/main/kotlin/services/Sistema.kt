@@ -74,7 +74,7 @@ class SistemaChamados {
         val chamadosDoCliente = StringBuilder()
 
         for (idChamado in cliente.getIdChamados()){
-            
+
             for (chamado in chamados){
                 if( idChamado == chamado.getIdChamado())
                     chamadosDoCliente.append("> ${chamado.toString()}\n")
