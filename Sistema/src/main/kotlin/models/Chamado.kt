@@ -18,6 +18,9 @@ class Chamado(
     fun setStatus(status: String){
         this.status = status
     }
+    fun getIdChamado(): Int{
+        return this.id
+    }
 
     override fun toString(): String {
         return ("Id: ${this.id} | Nome: ${this.nome} | Status: ${this.status} | Prioridade: ${this.prioridade}\n" +
