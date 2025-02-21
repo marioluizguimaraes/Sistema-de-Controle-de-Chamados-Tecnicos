@@ -19,7 +19,7 @@ fun main() {
             "/listar tecnicos" -> println("Lista de técnicos cadastrados: \n${ sistema.listarTecnicos()}")
             "/listar chamados" -> println("Lista de chamados cadastrados: \n${ sistema.listarChamados()}")
             "/sair" -> println("${sistema.desligar()}Desligando sistema...")
-            ""
+            //falta fazer a função para adicionar os chamados na lista de chamado do cliente e do tecnico na hora de adcionar
             else -> println("Comando inválido!")
         }
     }
