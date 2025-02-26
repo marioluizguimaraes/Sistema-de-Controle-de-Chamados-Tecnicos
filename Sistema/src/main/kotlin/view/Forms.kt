@@ -249,17 +249,18 @@ object Forms {
         return id
     }
 
-    fun inputNome():String{
-        var nome: String = ""
-        while (nome.isEmpty()) {
-            print("Digite o nome: ")
-            nome = readlnOrNull() ?: ""
-            if (nome.isEmpty()) {
-                println("⚠ Nome inválido! Tente novamente!")
+    fun inputText():String{
+        var text: String = ""
+        while (text.isEmpty()) {
+            print("Digite aqui: ")
+            text = readlnOrNull() ?: ""
+            if (text.isEmpty()) {
+                println("⚠ Campo inválido! Tente novamente!")
             }
         }
-        return nome
+        return text
     }
+
 }
 
 

@@ -58,10 +58,8 @@ fun menuEditarChamado(){
 
         when(entradaDeComando){
             "0" -> return
-            "1" -> sistema.editarNomeChamado(Forms.inputId(),Forms.inputNome())
-            "2" ->
-            "3" -> sistema.cadastrarChamado(Forms.novoChamado())
-            "4" -> sistema.removerChamado(Forms.inputId())
+            "1" -> sistema.editarNomeChamado(Forms.inputId(),Forms.inputText())
+
             else -> println("Comando inválido!")
         }
     }

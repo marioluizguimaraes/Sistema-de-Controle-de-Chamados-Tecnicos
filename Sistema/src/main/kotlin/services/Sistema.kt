@@ -36,7 +36,9 @@ class SistemaChamados {
     fun editarNomeChamado(id: Int, nome:String){
         for (chamado in this.chamados){
             if(chamado.getIdChamado() == id){
-
+                chamado.setNomeChamado(nome)
+                println("Nome alterado!")
+                break
             }
         }
     }

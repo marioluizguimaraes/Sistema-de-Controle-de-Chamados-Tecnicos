@@ -2,7 +2,7 @@ package models
 
 class Chamado(
     private var id: Int,
-    private val nome: String,
+    private var nome: String,
     private var descricao: String,
     private var status: String,
     private var prioridade: String,
@@ -28,5 +28,10 @@ class Chamado(
                 "Descrição: ${this.descricao}\n" +
                 "Aberto no dia ${this.dataAbertura} | ${this.getStatus()}\n")
     }
+
+    fun setNomeChamado(nome:String){
+        this.nome = nome
+    }
+
     //falta fazer a função para adicionar os chamados na lista de chamado do cliente e do tecnico na hora de adcionar
 }
