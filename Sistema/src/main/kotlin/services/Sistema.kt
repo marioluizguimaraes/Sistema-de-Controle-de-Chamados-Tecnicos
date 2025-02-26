@@ -36,8 +36,14 @@ class SistemaChamados {
     fun editarChamado(){
 
     }
-    fun removerChamado(){
-
+    fun removerChamado(id: Int){
+        var index: Int = -1
+        for (chamado in this.chamados){
+            index ++
+            if(chamado.getIdChamado() == id){
+                this.chamados.removeAt(index)
+            }
+        }
     }
 
     fun listarClientes(): String {
