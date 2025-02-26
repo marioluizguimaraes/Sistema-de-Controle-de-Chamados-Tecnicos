@@ -33,8 +33,12 @@ class SistemaChamados {
         return chamadoList.toString()
     }
 
-    fun editarChamado(){
-
+    fun editarChamado(id: Int){
+        for (chamado in this.chamados){
+            if(chamado.getIdChamado() == id){
+                
+            }
+        }
     }
     fun removerChamado(id: Int){
         var index: Int = -1
