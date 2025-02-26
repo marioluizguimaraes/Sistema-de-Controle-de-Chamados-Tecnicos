@@ -229,13 +229,13 @@ object Forms {
 
         return Chamado(id, nome, descricao, status, prioridade, idCliente, idTecnico, dataAbertura, dataConclusao)
     }
-    fun idClinete(): Int{
-        print("Digite o ID do cliente: ")
+
+    fun inputId(): Int{
         var id:Int = -1
         while (id == -1) {
-            print("Digite o ID do cliente: ")
+            print("Digite o ID: ")
             val inputId = readln()
-            if (inputId != null) {
+            if (inputId != null && inputId != "" && inputId != " ") {
                 val parsedId = inputId.toInt()
                 if (parsedId != null) {
                     id = parsedId
@@ -248,4 +248,18 @@ object Forms {
         }
         return id
     }
+
+    fun inputNome():String{
+        var nome: String = ""
+        while (nome.isEmpty()) {
+            print("Digite o nome: ")
+            nome = readlnOrNull() ?: ""
+            if (nome.isEmpty()) {
+                println("⚠ Nome inválido! Tente novamente!")
+            }
+        }
+        return nome
+    }
 }
+
+

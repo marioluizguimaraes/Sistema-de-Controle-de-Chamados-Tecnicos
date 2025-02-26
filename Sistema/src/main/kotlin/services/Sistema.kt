@@ -33,10 +33,10 @@ class SistemaChamados {
         return chamadoList.toString()
     }
 
-    fun editarChamado(id: Int){
+    fun editarNomeChamado(id: Int, nome:String){
         for (chamado in this.chamados){
             if(chamado.getIdChamado() == id){
-                
+
             }
         }
     }

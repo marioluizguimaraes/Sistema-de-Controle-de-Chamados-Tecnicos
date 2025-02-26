@@ -38,9 +38,30 @@ fun menuChamados(){
         when(entradaDeComando){
             "0" -> return
             "1" -> sistema.listarChamados()
-            "2" -> sistema.editarChamado()
+            "2" -> menuEditarChamado()
             "3" -> sistema.cadastrarChamado(Forms.novoChamado())
-            "4" -> sistema.removerChamado()
+            "4" -> sistema.removerChamado(Forms.inputId())
+            else -> println("Comando inválido!")
+        }
+    }
+}
+
+fun menuEditarChamado(){
+    while (sistema.getLigado()){
+        println("\n-------------------------------------------\n")
+        println("Sistema>Chamados>Editar")
+        println("Menu de Edição de Chamado:")
+        println("[1] Editar nome\n[2] Editar Descrição\n[3] Editar Status\n[4] Editar tecnico\n[0] voltar")
+
+        print("Comando: ")
+        var entradaDeComando = readln()
+
+        when(entradaDeComando){
+            "0" -> return
+            "1" -> sistema.editarNomeChamado(Forms.inputId(),Forms.inputNome())
+            "2" ->
+            "3" -> sistema.cadastrarChamado(Forms.novoChamado())
+            "4" -> sistema.removerChamado(Forms.inputId())
             else -> println("Comando inválido!")
         }
     }
