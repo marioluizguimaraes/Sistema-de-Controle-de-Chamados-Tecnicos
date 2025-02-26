@@ -33,6 +33,13 @@ class SistemaChamados {
         return chamadoList.toString()
     }
 
+    fun editarChamado(){
+
+    }
+    fun removerChamado(){
+
+    }
+
     fun listarClientes(): String {
         val clientesList = StringBuilder()
         for (cliente in clientes) {
@@ -61,7 +68,6 @@ class SistemaChamados {
     fun getLigado(): Boolean{
         return this.ligado
     }
-
 
     fun listarChamadosDoCliente(id: Int): String{
         val chamadosDoCliente = StringBuilder()

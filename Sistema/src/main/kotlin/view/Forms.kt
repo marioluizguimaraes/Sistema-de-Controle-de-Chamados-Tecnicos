@@ -151,8 +151,8 @@ object Forms {
 
         while (id == -1) {
             print("Digite o ID do chamado: ")
-            val inputId = readln()
-            if (inputId != null) {
+            var inputId = readln()
+            if (inputId != null && inputId != "" && inputId != " ") {
                 val parsedId = inputId.toInt()
                 if (parsedId != null) {
                     id = parsedId
