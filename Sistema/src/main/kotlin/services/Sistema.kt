@@ -62,13 +62,6 @@ class SistemaChamados {
         return this.ligado
     }
 
-    fun listarComando(): String{
-        val comandos = StringBuilder()
-        comandos.append("> /cadastrar cliente\n> /cadastrar técnico\n> /cadastrar chamado\n")
-        comandos.append("> /listar cliente\n> /listar técnico\n> /listar chamado\n> /sair")
-        return comandos.toString()
-    }
-
 
     fun listarChamadosDoCliente(id: Int): String{
         val chamadosDoCliente = StringBuilder()

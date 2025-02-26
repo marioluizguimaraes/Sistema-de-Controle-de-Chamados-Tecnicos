@@ -1,4 +1,4 @@
-package ui
+package view
 
 import models.Chamado
 import models.Cliente
