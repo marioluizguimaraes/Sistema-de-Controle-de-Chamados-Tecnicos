@@ -7,11 +7,11 @@ fun main() {
     val sistema = SistemaChamados()
 
     while (sistema.getLigado()){
-        print("Menu: digite um comando(ex: /help)")
+        Menu.principal()
         var entradaDeComando = readln()
-
         when(entradaDeComando){
-
+            "0" -> sistema.desligar()
+            "1" -> sistema
 
             else -> println("Comando inválido!")
         }
