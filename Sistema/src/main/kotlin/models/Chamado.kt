@@ -1,10 +1,10 @@
 package models
 
 class Chamado(
-    var id: Int,
-    var nome: String,
-    var descricao: String,
-    var status: String,
+    private var id: Int,
+    private var nome: String,
+    private var descricao: String,
+    private var status: String,
     private var prioridade: String,
     private var idCliente: Int,
     var idTecnico: Int,
