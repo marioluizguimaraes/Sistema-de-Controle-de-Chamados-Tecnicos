@@ -33,21 +33,22 @@ class SistemaChamados {
         return chamadoList.toString()
     }
 
-    fun editarNomeChamado(id: Int, nome:String){
-        for (chamado in this.chamados){
-            if(chamado.getIdChamado() == id){
-                chamado.setNomeChamado(nome)
-                println("Nome alterado!")
-                break
-            }
-        }
-    }
     fun removerChamado(id: Int){
         var index: Int = -1
         for (chamado in this.chamados){
             index ++
             if(chamado.getIdChamado() == id){
                 this.chamados.removeAt(index)
+            }
+        }
+    }
+
+    fun editarNomeChamado(id: Int, nome:String){
+        for (chamado in this.chamados){
+            if(chamado.getIdChamado() == id){
+                chamado.setNomeChamado(nome)
+                println("Nome alterado!")
+                break
             }
         }
     }
@@ -99,12 +100,12 @@ class SistemaChamados {
         return chamadosDoCliente.toString()
     }
 
+
     fun encontrarCliente(id: Int):String{
         for (cliente in clientes){
             if (id == cliente.getIdCliente()) return cliente.getNomeCliente()
         }
         return "Cliente não encontrado!"
     }
-
 
 }
