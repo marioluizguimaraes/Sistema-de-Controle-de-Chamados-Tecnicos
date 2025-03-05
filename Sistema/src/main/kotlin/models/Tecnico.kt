@@ -6,7 +6,7 @@ class Tecnico(
     cpf: String,
     email: String,
     telefone: String,
-    val especialidade: String
+    var especialidade: String
 ) : Pessoa(nome, cpf, email, telefone) {
 
     override  fun toString(): String{

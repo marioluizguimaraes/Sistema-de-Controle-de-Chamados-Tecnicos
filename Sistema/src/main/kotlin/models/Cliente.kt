@@ -15,13 +15,5 @@ class Cliente(
         return ("Id: ${this.id} Nome: ${this.nome}, CPF: ${this.cpf}, Email: ${this.email}, Telefone: ${this.telefone}, Endereço: ${this.endereco}\n")
     }
 
-    fun getIdChamados(): MutableList<Int> = this.chamados
-
-
-    fun setChamados(chamado: Int) = this.chamados.add(chamado)
-
-   fun getIdCliente():Int = this.id
-
-    fun getNomeCliente(): String = this.nome
 
 }

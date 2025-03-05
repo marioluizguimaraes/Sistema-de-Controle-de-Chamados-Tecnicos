@@ -5,107 +5,104 @@ import models.Cliente
 import models.Tecnico
 
 class SistemaChamados {
-    private val clientes = mutableListOf<Cliente>()
-    private val tecnicos = mutableListOf<Tecnico>()
+    private var ligado = true
     private val chamados = mutableListOf<Chamado>()
-    private var ligado: Boolean = true
+    private val tecnicos = mutableListOf<Tecnico>()
+    private val clientes = mutableListOf<Cliente>()
 
-    fun cadastrarCliente(cliente: Cliente) {
-        clientes.add(cliente)
+    fun getLigado(): Boolean = ligado
+    fun desligar() { ligado = false }
+
+    fun listarChamados() {
+        if (chamados.isEmpty()) println("Nenhum chamado cadastrado.")
+        else chamados.forEach { println(it) }
+    }
+
+    fun cadastrarChamado(chamado: Chamado) {
+        chamados.add(chamado)
+        println("Chamado cadastrado com sucesso!")
+    }
+
+    fun removerChamado(id: Int) {
+        chamados.removeIf { it.id == id }
+        println("Chamado removido com sucesso!")
+    }
+
+    fun editarNomeChamado(id: Int, novoNome: String) {
+        chamados.find { it.id == id }?.nome = novoNome
+    }
+
+    fun editarDescricaoChamado(id: Int, novaDescricao: String) {
+        chamados.find { it.id == id }?.descricao = novaDescricao
+    }
+
+    fun editarStatusChamado(id: Int, novoStatus: String) {
+        chamados.find { it.id == id }?.status = novoStatus
+    }
+
+    fun editarTecnicoChamado(id: Int, idTecnico: Int) {
+        chamados.find { it.id == id }?.idTecnico = idTecnico
+    }
+
+    fun listarTecnicos() {
+        if (tecnicos.isEmpty()) println("Nenhum técnico cadastrado.")
+        else tecnicos.forEach { println(it) }
     }
 
     fun cadastrarTecnico(tecnico: Tecnico) {
         tecnicos.add(tecnico)
+        println("Técnico cadastrado com sucesso!")
     }
 
-    fun cadastrarChamado(chamado: Chamado){
-        chamados.add(chamado)
+    fun removerTecnico(id: Int) {
+        tecnicos.removeIf { it.id == id }
+        println("Técnico removido com sucesso!")
     }
 
-    fun listarChamados(): String{
-        val chamadoList = StringBuilder()
-        for (chamado in chamados){
-            chamadoList.append("> ${chamado.toString()}")
-        }
-        if (chamadoList.toString().isEmpty()){
-            return "⚠ Nenhum chamado foi encontrado!"
-        }
-        return chamadoList.toString()
+    fun editarNomeTecnico(id: Int, novoNome: String) {
+        tecnicos.find { it.id == id }?.nome = novoNome
     }
 
-    fun removerChamado(id: Int){
-        var index: Int = -1
-        for (chamado in this.chamados){
-            index ++
-            if(chamado.getIdChamado() == id){
-                this.chamados.removeAt(index)
-            }
-        }
+    fun editarEmailTecnico(id: Int, novoEmail: String) {
+        tecnicos.find { it.id == id }?.email = novoEmail
     }
 
-    fun editarNomeChamado(id: Int, nome:String){
-        for (chamado in this.chamados){
-            if(chamado.getIdChamado() == id){
-                chamado.setNomeChamado(nome)
-                println("Nome alterado!")
-                break
-            }
-        }
+    fun editarTelefoneTecnico(id: Int, novoTelefone: String) {
+        tecnicos.find { it.id == id }?.telefone = novoTelefone
     }
 
-    fun listarClientes(): String {
-        val clientesList = StringBuilder()
-        for (cliente in clientes) {
-            clientesList.append("> ${cliente.toString()}")
-        }
-        if (clientesList.toString().isEmpty()){
-            return "⚠ Nenhum cliente foi encontrado!"
-        }
-        return clientesList.toString()
+    fun editarEspecialidadeTecnico(id: Int, novaEspecialidade: String) {
+        tecnicos.find { it.id == id }?.especialidade = novaEspecialidade
     }
 
-    fun listarTecnicos(): String {
-        val tecnicosList = StringBuilder()
-        for (tecnico in tecnicos) {
-            tecnicosList.append("> ${tecnico.toString()}")
-        }
-        if (tecnicosList.toString().isEmpty()){
-            return "⚠ Nenhum técnico foi encontrado!"
-        }
-        return tecnicosList.toString()
+    fun listarClientes() {
+        if (clientes.isEmpty()) println("Nenhum cliente cadastrado.")
+        else clientes.forEach { println(it) }
     }
 
-    fun desligar(){
-        this.ligado = false
-    }
-    fun getLigado(): Boolean{
-        return this.ligado
+    fun cadastrarCliente(cliente: Cliente) {
+        clientes.add(cliente)
+        println("Cliente cadastrado com sucesso!")
     }
 
-    fun listarChamadosDoCliente(id: Int): String{
-        val chamadosDoCliente = StringBuilder()
-
-        for (cliente in clientes){
-            if (cliente.getIdCliente() == id){
-                for (idChamado in cliente.getIdChamados()){
-                    for (chamado in chamados){
-                        if( idChamado == chamado.getIdChamado())
-                            chamadosDoCliente.append("> ${chamado.toString()}\n")
-                        break
-                    }
-                }
-                break
-            }
-        }
-        return chamadosDoCliente.toString()
+    fun removerCliente(id: Int) {
+        clientes.removeIf { it.id == id }
+        println("Cliente removido com sucesso!")
     }
 
-
-    fun encontrarCliente(id: Int):String{
-        for (cliente in clientes){
-            if (id == cliente.getIdCliente()) return cliente.getNomeCliente()
-        }
-        return "Cliente não encontrado!"
+    fun editarNomeCliente(id: Int, novoNome: String) {
+        clientes.find { it.id == id }?.nome = novoNome
     }
 
+    fun editarEmailCliente(id: Int, novoEmail: String) {
+        clientes.find { it.id == id }?.email = novoEmail
+    }
+
+    fun editarTelefoneCliente(id: Int, novoTelefone: String) {
+        clientes.find { it.id == id }?.telefone = novoTelefone
+    }
+
+    fun editarEnderecoCliente(id: Int, novoEndereco: String) {
+        clientes.find { it.id == id }?.endereco = novoEndereco
+    }
 }
