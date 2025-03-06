@@ -1,114 +1,48 @@
-# 🚀 Sistema de Controle de Chamados Técnicos
+Claro! Aqui está um README mais estilizado, com uma apresentação mais visual e organizada:
 
-✨ Este é um projeto acadêmico desenvolvido para a disciplina de Programação Orientada a Objetos (POO). O sistema permite o gerenciamento de chamados técnicos, incluindo cadastro de clientes, técnicos e chamados, controle de status e prioridades, e geração de relatórios de atendimento.
 
----
+# 📞 **Sistema de Gerenciamento de Chamados** 🎯
 
-## 📚 Índice
+## 🚀 Descrição
 
-1. [📝 Descrição do Projeto](#-descrição-do-projeto)
-2. [🎯 Requisitos Funcionais](#-requisitos-funcionais)
-3. [⚙️ Requisitos Técnicos](#️-requisitos-técnicos)
-4. [✨ Funcionalidades Adicionais](#-funcionalidades-adicionais)
-5. [💻 Como Executar o Projeto](#-como-executar-o-projeto)
-6. [📊 Diagrama de Classes](#-diagrama-de-classes)
-7. [💡 Decisões de Projeto](#-decisões-de-projeto)
-8. [🚧 Desafios Enfrentados](#-desafios-enfrentados)
+Este projeto foi desenvolvido como parte do trabalho acadêmico do curso de **Análise e Desenvolvimento de Sistemas (ADS)**, no **terceiro período**. O sistema permite o gerenciamento de **chamados**, **clientes** e **técnicos** utilizando conceitos de **Programação Orientada a Objetos (POO)**.
+
+Com ele, você pode cadastrar, editar, listar e remover técnicos, clientes e chamados, além de gerenciar as interações entre essas entidades.
 
 ---
 
-## 📝 Descrição do Projeto
+## 🛠 Funcionalidades
 
-📚 O **Sistema de Controle de Chamados Técnicos** foi desenvolvido para gerenciar chamados técnicos em uma empresa ou organização. Ele permite:
+### **Chamados**
 
-- Cadastro, edição, exclusão e consulta de clientes, técnicos e chamados.
-- Controle de status (`Aberto`, `Em atendimento`, `Concluído`) e prioridade (`Alta`, `Média`, `Baixa`).
-- Geração de relatórios de atendimento.
-- Persistência de dados em arquivos `.csv`.
+- **Cadastrar Chamado**: Criação de um novo chamado associado a um cliente e a um técnico.
+- **Editar Chamado**: Modificação de informações de um chamado, como nome, descrição, status e técnico.
+- **Listar Chamados**: Exibição de todos os chamados cadastrados.
+- **Remover Chamado**: Exclusão de um chamado existente.
+- **Visualizar Chamados de um Cliente**: Listagem de todos os chamados associados a um cliente.
 
-🧱 O sistema é implementado em **Kotlin**, utilizando princípios de POO, como encapsulamento, herança, polimorfismo e interfaces.
+### **Técnicos**
 
----
+- **Cadastrar Técnico**: Cadastro de técnicos, com nome, especialidade e contato.
+- **Editar Técnico**: Edição de informações de técnicos, como nome, email, telefone e especialidade.
+- **Listar Técnicos**: Exibição de todos os técnicos cadastrados.
+- **Remover Técnico**: Exclusão de um técnico do sistema.
 
-## 🎯 Requisitos Funcionais
+### **Clientes**
 
-1. **Cadastro, Edição, Exclusão e Consulta** 📝:
-   - O sistema permite o cadastro, edição, exclusão e consulta de clientes, técnicos e chamados.
-   - Cada entidade possui atributos específicos e métodos para manipulação.
-
-2. **Funcionalidades Específicas** 🔧:
-   - Abertura e fechamento de chamados técnicos. 
-   - Atribuição de técnicos aos chamados.
-   - Controle de status e prioridade dos chamados.
-
-3. **Relatórios** 📊:
-   - Geração de relatórios de atendimento, listando todos os chamados com seus respectivos clientes e status.
+- **Cadastrar Cliente**: Cadastro de novos clientes com dados como nome, email, telefone e endereço.
+- **Editar Cliente**: Modificação de dados de clientes, como nome, email, telefone e endereço.
+- **Listar Clientes**: Exibição de todos os clientes cadastrados.
+- **Remover Cliente**: Exclusão de um cliente do sistema.
+- **Visualizar Chamados de um Cliente**: Exibição dos chamados vinculados a um cliente.
 
 ---
 
-## ⚙️ Requisitos Técnicos
+## 📊 Diagrama UML
 
-1. **Classes e Objetos** 🏗️:
-   - As classes principais são: `Pessoa`, `Cliente`, `Tecnico`, `Chamado` e `SistemaChamados`.
-   - Todas as classes seguem o princípio de encapsulamento, com atributos privados e métodos públicos (getters e setters).
+### **Estrutura do Sistema**
 
-2. **Herança e Polimorfismo** 🌳:
-   - A classe `Pessoa` é a base para `Cliente` e `Tecnico`.
-   - Interfaces como `RelatorioGeravel` e `Persistivel` garantem comportamentos comuns.
-
-3. **Coleções** 📂:
-   - Utilizamos `MutableList` para armazenar clientes, técnicos e chamados.
-
-4. **Exceções** ❗:
-   - Implementamos tratamento de exceções para situações como cliente não encontrado ou chamado inválido.
-
-5. **Persistência de Dados** 💾:
-   - Os dados são salvos e carregados em arquivos `.csv` para persistência.
-
----
-
-## 💡 Funcionalidades Adicionais
-
-1. **Validação de Dados** ✅:
-   - Entradas do usuário (CPF, e-mail, etc.) podem ser validadas antes de serem processadas.
-
-2. **Interface de Usuário** 🖥️:
-   - O sistema possui uma interface simples via console, com um menu interativo que permite ao usuário realizar operações até escolher sair.
-
----
-
-## 💻 Como Executar o Projeto
-
-### 🛠️ Pré-requisitos
-
-- **Kotlin**: Certifique-se de ter o compilador Kotlin instalado. Você pode baixá-lo [aqui](https://kotlinlang.org/).
-- **Git**: Para clonar o repositório, você precisa do Git instalado. Baixe-o [aqui](https://git-scm.com/).
-
-### 🚀 Passos para Execução
-
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/seu-usuario/sistema-chamados-tecnicos.git
-   cd sistema-chamados-tecnicos
-   ```
-
-2. Compile o código:
-   ```bash
-   kotlinc Main.kt -include-runtime -d sistema.jar
-   ```
-
-3. Execute o programa:
-   ```bash
-   java -jar sistema.jar
-   ```
-
-4. Interaja com o sistema pelo terminal. 🖥️
-
----
-
-## 📊 Diagrama de Classes
-
-O diagrama de classes pode ser visualizado [aqui](link-para-o-diagrama) ou gerado localmente usando ferramentas como o [Mermaid Live Editor](https://mermaid-js.github.io/mermaid-live-editor/).
+Aqui está um diagrama UML representando as classes principais e suas relações no sistema:
 
 ```mermaid
 classDiagram
@@ -198,34 +132,68 @@ classDiagram
 
 ---
 
-## 💡 Decisões de Projeto
+## 📁 Estrutura do Projeto
 
-1. **Encapsulamento** 🔒:
-   - Todos os atributos das classes são privados, e métodos públicos (getters e setters) são usados para acessá-los.
+### **Diretórios**
 
-2. **Herança** 🌳:
-   - A classe `Pessoa` é a base para `Cliente` e `Tecnico`, permitindo reutilização de código.
-
-3. **Interfaces** 🔄:
-   - Interfaces como `RelatorioGeravel` e `Persistivel` garantem flexibilidade e extensibilidade.
-
-4. **Persistência** 💾:
-   - Optamos por salvar os dados em arquivos `.csv` para simplicidade e portabilidade.
+- `models/`: Contém as classes principais (`Pessoa`, `Tecnico`, `Cliente`, `Chamado`).
+- `services/`: Contém a classe de lógica de negócios (`SistemaChamados`).
+- `view/`: Contém o código de interação com o usuário (CLI), incluindo os formulários e menus.
 
 ---
 
-## 🚧 Desafios Enfrentados
+## ⚙️ Como Executar
 
-1. **Persistência de Dados** 💾:
-   - Implementar a leitura e escrita de dados em arquivos `.csv` foi um desafio inicial, mas resolvemos usando métodos simples de manipulação de arquivos.
+### Passo 1: Clonar o Repositório
 
-2. **Validação de Dados** ✅:
-   - Garantir que entradas inválidas (como CPFs duplicados ou e-mails mal formatados) fossem tratadas adequadamente.
+Clone o repositório para sua máquina local:
 
-3. **Interface de Usuário** 🖥️:
-   - Criar uma interface simples, mas funcional, para interação via terminal.
+```bash
+git clone https://github.com/usuario/nome-do-repositorio.git
+```
+
+### Passo 2: Navegar até o Diretório
+
+Entre no diretório do projeto:
+
+```bash
+cd nome-do-repositorio
+```
+
+### Passo 3: Executar o Projeto
+
+Abra o projeto em uma IDE como o **IntelliJ IDEA** ou **Android Studio** e clique em **Run** no arquivo `Main.kt`. Caso prefira usar o terminal:
+
+```bash
+kotlinc src -include-runtime -d SistemaChamados.jar
+java -jar SistemaChamados.jar
+```
 
 ---
 
-🎉 **Agradecimentos**  
-Se você gostou deste projeto, considere dar uma ⭐ no repositório!
+## 🧰 Tecnologias Utilizadas
+
+- **Kotlin**: Linguagem de programação principal.
+- **Programação Orientada a Objetos (POO)**: Princípios de POO como herança, encapsulamento e polimorfismo.
+- **Interface de Linha de Comando (CLI)**: Interface simples para interação com o usuário.
+
+---
+
+## 📄 Licença
+
+Este projeto está licenciado sob a **Licença MIT**. Consulte o arquivo [LICENSE](LICENSE) para mais detalhes.
+
+---
+
+## 🤝 Contribuição
+
+Contribuições são bem-vindas! Para sugestões ou melhorias, abra uma **issue** ou envie um **pull request**.
+
+---
+
+## 📬 Contato
+
+Caso tenha alguma dúvida ou sugestão, entre em contato comigo:
+
+- **E-mail**: mariolsg.oficial@gmail.com
+- **LinkedIn**: [https://www.linkedin.com/in/mariolz/](https://www.linkedin.com/in/mariolz/)
