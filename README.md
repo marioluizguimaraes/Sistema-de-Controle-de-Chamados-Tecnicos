@@ -113,98 +113,87 @@ O diagrama de classes pode ser visualizado [aqui](link-para-o-diagrama) ou gerad
 ```mermaid
 classDiagram
     class Pessoa {
-        - String nome
-        - String cpf
-        - String email
-        - String telefone
-    }
-
-    class Cliente {
-        - int id
-        - String endereco
-        - MutableList~Int~ chamados
-        + String toString()
+        <<abstract>>
+        -nome: String
+        -cpf: String
+        -email: String
+        -telefone: String
     }
 
     class Tecnico {
-        - int id
-        - String especialidade
-        + String toString()
+        -id: Int
+        -especialidade: String
+    }
+
+    class Cliente {
+        -id: Int
+        -endereco: String
+        -chamados: MutableList<Int>
     }
 
     class Chamado {
-        - int id
-        - String nome
-        - String descricao
-        - String status
-        - String prioridade
-        - int idCliente
-        - int idTecnico
-        - String dataAbertura
-        - String? dataConclusao
-        + String toString()
+        -id: Int
+        -nome: String
+        -descricao: String
+        -status: String
+        -prioridade: String
+        -idCliente: Int
+        -idTecnico: Int
+        -dataAbertura: String
+        -dataConclusao: String?
     }
 
     class SistemaChamados {
-        - bool ligado
-        - MutableList~Chamado~ chamados
-        - MutableList~Tecnico~ tecnicos
-        - MutableList~Cliente~ clientes
-        - int proximoIdChamado
-        - int proximoIdCliente
-        - int proximoIdTecnico
-        + bool getLigado()
-        + void desligar()
-        + void listarChamados()
-        + void cadastrarChamado(Chamado)
-        + void removerChamado(int)
-        + void editarNomeChamado(int, String)
-        + void editarDescricaoChamado(int, String)
-        + void editarStatusChamado(int, String)
-        + void mostrarChamado(int)
-        + void listarChamadosDoCliente(int)
-        + void cadastrarTecnico(Tecnico)
-        + void editarTecnicoChamado(int, int)
-        + void listarTecnicos()
-        + void removerTecnico(int)
-        + void editarNomeTecnico(int, String)
-        + void editarEmailTecnico(int, String)
-        + void editarTelefoneTecnico(int, String)
-        + void editarEspecialidadeTecnico(int, String)
-        + void cadastrarCliente(Cliente)
-        + void listarClientes()
-        + void removerCliente(int)
-        + void editarNomeCliente(int, String)
-        + void editarEmailCliente(int, String)
-        + void editarTelefoneCliente(int, String)
-        + void editarEnderecoCliente(int, String)
-        + bool verificarChamados()
-        + bool verificarTecnicos()
-        + bool verificarClientes()
-        + bool existeChamado(int)
-        + bool existeTecnico(int)
-        + bool existeCliente(int)
+        -chamados: MutableList<Chamado>
+        -tecnicos: MutableList<Tecnico>
+        -clientes: MutableList<Cliente>
+        -proximoIdChamado: Int
+        -proximoIdCliente: Int
+        -proximoIdTecnico: Int
+        +cadastrarChamado(Chamado)
+        +removerChamado(Int)
+        +editarStatusChamado(Int, String)
+        +listarChamadosDoCliente(Int)
+        +cadastrarTecnico(Tecnico)
+        +removerTecnico(Int)
+        +cadastrarCliente(Cliente)
+        +removerCliente(Int)
+        +existeChamado(Int): Boolean
+    }
+
+    class Forms {
+        <<utility>>
+        +novoCliente(): Cliente
+        +novoTecnico(): Tecnico
+        +novoChamado(): Chamado
+        +inputId(String): Int
+        +inputText(String): String
+        +inputPrioridade(): String
     }
 
     class Main {
-        + void main()
-        + void menuPrincipal()
-        + void menuChamados()
-        + void menuEditarChamado()
-        + void menuTecnicos()
-        + void menuEditarTecnico()
-        + void menuClientes()
-        + void menuEditarCliente()
+        <<entrypoint>>
+        +main()
+        +menuPrincipal()
+        +menuChamados()
+        +menuEditarChamado()
+        +menuTecnicos()
+        +menuEditarTecnico()
+        +menuClientes()
+        +menuEditarCliente()
     }
 
-    Pessoa <|-- Cliente
     Pessoa <|-- Tecnico
-    SistemaChamados "1" -- "*" Chamado : gerencia
-    SistemaChamados "1" -- "*" Cliente : gerencia
-    SistemaChamados "1" -- "*" Tecnico : gerencia
-    Cliente "1" -- "*" Chamado : possui
-    Tecnico "1" -- "*" Chamado : atende
-    Main --> SistemaChamados : usa
+    Pessoa <|-- Cliente
+    SistemaChamados "1" *-- "*" Chamado: gerencia
+    SistemaChamados "1" *-- "*" Tecnico: gerencia
+    SistemaChamados "1" *-- "*" Cliente: gerencia
+    Cliente "1" --> "*" Chamado: possui
+    Chamado "1" --> "1" Cliente: associado
+    Chamado "1" --> "1" Tecnico: associado
+    Forms ..> SistemaChamados: utiliza
+    Main --> SistemaChamados: instancia
+    Main --> Forms: utiliza
 ```
 
 ---
