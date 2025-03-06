@@ -173,7 +173,7 @@ fun menuEditarCliente() {
         println("\n-------------------------------------------\n")
         println("Sistema > Clientes > Editar")
         println("[1] Editar Nome\n[2] Editar Email\n[3] Editar Telefone\n[4] Editar Endereço\n[0] Voltar")
-        print("Comando: ")
+
 
         val id = Forms.inputId("Digite o ID do cliente: ")
 
@@ -182,6 +182,7 @@ fun menuEditarCliente() {
             return
         }
 
+        print("Comando: ")
         when (readln()) {
             "0" -> return
             "1" -> sistema.editarNomeCliente(id, Forms.inputText("Digite o novo nome: "))

@@ -14,7 +14,7 @@ object Forms {
         val telefone = inputText("Digite o telefone do cliente: ")
         val endereco = inputText("Digite o endereço do cliente: ")
 
-        println("Cliente cadastrado com sucesso!")
+        println("Carregando...")
         return Cliente(id, nome, cpf, email, telefone, endereco)
     }
 
@@ -26,7 +26,7 @@ object Forms {
         val telefone = inputText("Digite o telefone do Técnico: ")
         val especialidade = inputText("Digite a especialidade do Técnico: ")
 
-        println("Técnico cadastrado com sucesso!")
+        println("Carregando...")
         return Tecnico(id, nome, cpf, email, telefone, especialidade)
     }
 
@@ -41,7 +41,7 @@ object Forms {
         val dataAbertura = ""
         val dataConclusao: String? = null
 
-        println("Chamado cadastrado com sucesso!")
+        println("Carregando...")
         return Chamado(id, nome, descricao, status, prioridade, idCliente, idTecnico, dataAbertura, dataConclusao)
     }
 
