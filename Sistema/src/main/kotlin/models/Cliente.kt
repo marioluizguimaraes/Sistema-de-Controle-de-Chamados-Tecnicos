@@ -2,7 +2,7 @@ package models
 
 
 class Cliente(
-    val id: Int,
+    var id: Int,
     nome: String,
     cpf: String,
     email: String,

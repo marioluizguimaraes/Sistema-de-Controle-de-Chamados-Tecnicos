@@ -6,10 +6,10 @@ class Chamado(
     var descricao: String,
     var status: String,
     private var prioridade: String,
-    private var idCliente: Int,
+    var idCliente: Int,
     var idTecnico: Int,
     private var dataAbertura: String,
-    private var dataConclusao: String?
+    var dataConclusao: String?
 ) {
 
     override fun toString(): String {

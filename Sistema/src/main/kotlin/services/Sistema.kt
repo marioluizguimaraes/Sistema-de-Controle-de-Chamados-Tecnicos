@@ -9,6 +9,8 @@ class SistemaChamados {
     private val chamados = mutableListOf<Chamado>()
     private val tecnicos = mutableListOf<Tecnico>()
     private val clientes = mutableListOf<Cliente>()
+    private var proximoIdChamado = 1
+    private var proximoIdCliente = 1
 
     fun getLigado(): Boolean = ligado
     fun desligar() { ligado = false }
@@ -19,7 +21,9 @@ class SistemaChamados {
     }
 
     fun cadastrarChamado(chamado: Chamado) {
+        chamado.id = proximoIdChamado++
         chamados.add(chamado)
+        adicionarChamadoAoCliente(chamado.idCliente, chamado.id)
         println("Chamado cadastrado com sucesso!")
     }
 
@@ -37,12 +41,37 @@ class SistemaChamados {
     }
 
     fun editarStatusChamado(id: Int, novoStatus: String) {
-        chamados.find { it.id == id }?.status = novoStatus
+        val chamado = chamados.find { it.id == id }
+        if (chamado != null) {
+            chamado.status = novoStatus
+            if (novoStatus.equals("Concluído", ignoreCase = true)) {
+                print("Digite a data de conclusão: ")
+                chamado.dataConclusao = readln()
+            }
+        }
     }
-
 
     fun editarTecnicoChamado(id: Int, idTecnico: Int) {
         chamados.find { it.id == id }?.idTecnico = idTecnico
+    }
+
+    fun mostrarChamado(id: Int) {
+        val chamado = chamados.find { it.id == id }
+        if (chamado != null) println(chamado) else println("Chamado não encontrado.")
+    }
+
+    fun listarChamadosDoCliente(idCliente: Int) {
+        val cliente = clientes.find { it.id == idCliente }
+        if (cliente != null) {
+            if (cliente.chamados.isEmpty()) println("O cliente não possui chamados.")
+            else cliente.chamados.forEach { id -> mostrarChamado(id) }
+        } else {
+            println("Cliente não encontrado.")
+        }
+    }
+
+    private fun adicionarChamadoAoCliente(idCliente: Int, idChamado: Int) {
+        clientes.find { it.id == idCliente }?.chamados?.add(idChamado)
     }
 
     fun listarTecnicos() {
@@ -82,6 +111,7 @@ class SistemaChamados {
     }
 
     fun cadastrarCliente(cliente: Cliente) {
+        cliente.id = proximoIdCliente++
         clientes.add(cliente)
         println("Cliente cadastrado com sucesso!")
     }
