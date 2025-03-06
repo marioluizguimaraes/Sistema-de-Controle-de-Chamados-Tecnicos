@@ -35,9 +35,21 @@ fun menuChamados() {
         when (readln()) {
             "0" -> return
             "1" -> sistema.listarChamados()
-            "2" -> menuEditarChamado()
+            "2" -> {
+                if (!sistema.verificarChamados()) {
+                    println("Não há chamados cadastrados!")
+                } else{
+                    menuEditarChamado()
+                }
+            }
             "3" -> sistema.cadastrarChamado(Forms.novoChamado())
-            "4" -> sistema.removerChamado(Forms.inputId("Digite o ID: "))
+            "4" -> {
+                if (!sistema.verificarChamados()) {
+                    println("Não há chamados cadastrados!")
+                } else{
+                    sistema.removerChamado(Forms.inputId("Digite o ID: "))
+                }
+            }
             else -> println("Comando inválido!")
         }
     }
@@ -49,9 +61,14 @@ fun menuEditarChamado() {
         println("Sistema > Chamados > Editar")
         println("[1] Editar Nome\n[2] Editar Descrição\n[3] Editar Status\n[4] Editar Técnico\n[0] Voltar")
 
+        print("Comando: ")
         val id = Forms.inputId("Digite o ID do chamado: ")
 
-        print("Comando: ")
+        if (!sistema.existeChamado(id)) {
+            println("Chamado com ID $id não encontrado!")
+            return
+        }
+
         when (readln()) {
             "0" -> return
             "1" -> sistema.editarNomeChamado(id, Forms.inputText("Digite o novo nome: "))
@@ -75,8 +92,20 @@ fun menuTecnicos() {
             "0" -> return
             "1" -> sistema.listarTecnicos()
             "2" -> sistema.cadastrarTecnico(Forms.novoTecnico())
-            "3" -> menuEditarTecnico()
-            "4" -> sistema.removerTecnico(Forms.inputId("Digite o ID do técnico: "))
+            "3" -> {
+                if (!sistema.verificarTecnicos()) {
+                    println("Não há técnicos cadastrados!")
+                } else{
+                    menuEditarTecnico()
+                }
+            }
+            "4" -> {
+                if (!sistema.verificarTecnicos()) {
+                    println("Não há técnicos cadastrados!")
+                } else{
+                    sistema.removerTecnico(Forms.inputId("Digite o ID do técnico: "))
+                }
+            }
             else -> println("Comando inválido!")
         }
     }
@@ -90,6 +119,12 @@ fun menuEditarTecnico() {
         print("Comando: ")
 
         val id = Forms.inputId("Digite o ID do técnico: ")
+
+        if (!sistema.existeTecnico(id)) {
+            println("Técnico com ID $id não encontrado!")
+            return
+        }
+
         when (readln()) {
             "0" -> return
             "1" -> sistema.editarNomeTecnico(id, Forms.inputText("Digite o novo nome: "))
@@ -113,8 +148,20 @@ fun menuClientes() {
             "0" -> return
             "1" -> sistema.listarClientes()
             "2" -> sistema.cadastrarCliente(Forms.novoCliente())
-            "3" -> menuEditarCliente()
-            "4" -> sistema.removerCliente(Forms.inputId("Digite o ID do cliente: "))
+            "3" -> {
+                if (!sistema.verificarClientes()) {
+                    println("Não há clientes cadastrados!")
+                } else{
+                    menuEditarCliente()
+                }
+            }
+            "4" -> {
+                if (!sistema.verificarClientes()) {
+                    println("Não há clientes cadastrados!")
+                } else{
+                    sistema.removerCliente(Forms.inputId("Digite o ID do cliente: "))
+                }
+            }
             "5" -> sistema.listarChamadosDoCliente(Forms.inputId("Digite o ID do cliente: "))
             else -> println("Comando inválido!")
         }
@@ -129,6 +176,12 @@ fun menuEditarCliente() {
         print("Comando: ")
 
         val id = Forms.inputId("Digite o ID do cliente: ")
+
+        if (!sistema.existeCliente(id)) {
+            println("Cliente com ID $id não encontrado!")
+            return
+        }
+
         when (readln()) {
             "0" -> return
             "1" -> sistema.editarNomeCliente(id, Forms.inputText("Digite o novo nome: "))

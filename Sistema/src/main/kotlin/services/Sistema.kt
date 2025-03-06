@@ -21,6 +21,8 @@ class SistemaChamados {
         else chamados.forEach { println(it) }
     }
 
+    /*------------------------------------- Chamado ------------------------------------------------------*/
+
     fun cadastrarChamado(chamado: Chamado) {
         val cliente = clientes.find { it.id == chamado.idCliente }
         val tecnico = tecnicos.find { it.id == chamado.idTecnico }
@@ -64,10 +66,6 @@ class SistemaChamados {
         }
     }
 
-    fun editarTecnicoChamado(id: Int, idTecnico: Int) {
-        chamados.find { it.id == id }?.idTecnico = idTecnico
-    }
-
     fun mostrarChamado(id: Int) {
         val chamado = chamados.find { it.id == id }
         if (chamado != null) println(chamado) else println("Chamado não encontrado.")
@@ -83,15 +81,21 @@ class SistemaChamados {
         }
     }
 
-    fun listarTecnicos() {
-        if (tecnicos.isEmpty()) println("Nenhum técnico cadastrado.")
-        else tecnicos.forEach { println(it) }
-    }
+    /*------------------------------------- Técnico ------------------------------------------------------*/
 
     fun cadastrarTecnico(tecnico: Tecnico) {
         tecnico.id = proximoIdTecnico++
         tecnicos.add(tecnico)
         println("Técnico cadastrado com sucesso!")
+    }
+
+    fun editarTecnicoChamado(id: Int, idTecnico: Int) {
+        chamados.find { it.id == id }?.idTecnico = idTecnico
+    }
+
+    fun listarTecnicos() {
+        if (tecnicos.isEmpty()) println("Nenhum técnico cadastrado.")
+        else tecnicos.forEach { println(it) }
     }
 
     fun removerTecnico(id: Int) {
@@ -115,15 +119,17 @@ class SistemaChamados {
         tecnicos.find { it.id == id }?.especialidade = novaEspecialidade
     }
 
-    fun listarClientes() {
-        if (clientes.isEmpty()) println("Nenhum cliente cadastrado.")
-        else clientes.forEach { println(it) }
-    }
+    /*------------------------------------- Cliente ------------------------------------------------------*/
 
     fun cadastrarCliente(cliente: Cliente) {
         cliente.id = proximoIdCliente++
         clientes.add(cliente)
         println("Cliente cadastrado com sucesso!")
+    }
+
+    fun listarClientes() {
+        if (clientes.isEmpty()) println("Nenhum cliente cadastrado.")
+        else clientes.forEach { println(it) }
     }
 
     fun removerCliente(id: Int) {
@@ -145,5 +151,31 @@ class SistemaChamados {
 
     fun editarEnderecoCliente(id: Int, novoEndereco: String) {
         clientes.find { it.id == id }?.endereco = novoEndereco
+    }
+
+    /*------------------------------------- Verificações ---------------------------------------------------*/
+
+    fun verificarChamados(): Boolean {
+        return chamados.isNotEmpty()
+    }
+
+    fun verificarTecnicos(): Boolean {
+        return tecnicos.isNotEmpty()
+    }
+
+    fun verificarClientes(): Boolean {
+        return clientes.isNotEmpty()
+    }
+
+    fun existeChamado(id: Int): Boolean {
+        return chamados.any { it.id == id }
+    }
+
+    fun existeTecnico(id: Int): Boolean {
+        return tecnicos.any { it.id == id }
+    }
+
+    fun existeCliente(id: Int): Boolean {
+        return clientes.any { it.id == id }
     }
 }
