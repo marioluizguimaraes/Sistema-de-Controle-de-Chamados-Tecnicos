@@ -40,7 +40,6 @@ class SistemaChamados {
         chamados.find { it.id == id }?.status = novoStatus
     }
 
-    //procurar saber esse it. e o .find
 
     fun editarTecnicoChamado(id: Int, idTecnico: Int) {
         chamados.find { it.id == id }?.idTecnico = idTecnico

@@ -48,9 +48,10 @@ fun menuEditarChamado() {
         println("\n-------------------------------------------\n")
         println("Sistema > Chamados > Editar")
         println("[1] Editar Nome\n[2] Editar Descrição\n[3] Editar Status\n[4] Editar Técnico\n[0] Voltar")
-        print("Comando: ")
 
         val id = Forms.inputId("Digite o ID do chamado: ")
+
+        print("Comando: ")
         when (readln()) {
             "0" -> return
             "1" -> sistema.editarNomeChamado(id, Forms.inputText("Digite o novo nome: "))
