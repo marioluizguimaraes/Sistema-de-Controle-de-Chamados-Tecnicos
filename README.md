@@ -113,84 +113,98 @@ O diagrama de classes pode ser visualizado [aqui](link-para-o-diagrama) ou gerad
 ```mermaid
 classDiagram
     class Pessoa {
-        -String nome
-        -String cpf
-        -String email
-        -String telefone
-        +String getNome()
-        +void setNome(String nome)
-        +String getCpf()
-        +void setCpf(String cpf)
-        +String getEmail()
-        +void setEmail(String email)
-        +String getTelefone()
-        +void setTelefone(String telefone)
+        - String nome
+        - String cpf
+        - String email
+        - String telefone
     }
 
     class Cliente {
-        -String endereco
-        +String getEndereco()
-        +void setEndereco(String endereco)
-        +void abrirChamado(Chamado chamado)
+        - int id
+        - String endereco
+        - MutableList~Int~ chamados
+        + String toString()
     }
 
     class Tecnico {
-        -String especialidade
-        +String getEspecialidade()
-        +void setEspecialidade(String especialidade)
-        +void atenderChamado(Chamado chamado)
+        - int id
+        - String especialidade
+        + String toString()
     }
 
     class Chamado {
-        -int id
-        -String descricao
-        -String status
-        -String prioridade
-        -Cliente cliente
-        -Tecnico tecnico
-        -Date dataAbertura
-        -Date dataConclusao
-        +int getId()
-        +void setId(int id)
-        +String getDescricao()
-        +void setDescricao(String descricao)
-        +String getStatus()
-        +void setStatus(String status)
-        +String getPrioridade()
-        +void setPrioridade(String prioridade)
-        +Cliente getCliente()
-        +void setCliente(Cliente cliente)
-        +Tecnico getTecnico()
-        +void setTecnico(Tecnico tecnico)
-        +Date getDataAbertura()
-        +void setDataAbertura(Date dataAbertura)
-        +Date getDataConclusao()
-        +void setDataConclusao(Date dataConclusao)
+        - int id
+        - String nome
+        - String descricao
+        - String status
+        - String prioridade
+        - int idCliente
+        - int idTecnico
+        - String dataAbertura
+        - String? dataConclusao
+        + String toString()
     }
 
     class SistemaChamados {
-        -List~Cliente~ clientes
-        -List~Tecnico~ tecnicos
-        -List~Chamado~ chamados
-        +void cadastrarCliente(Cliente cliente)
-        +void editarCliente(Cliente cliente)
-        +void excluirCliente(Cliente cliente)
-        +Cliente consultarCliente(String cpf)
-        +void cadastrarTecnico(Tecnico tecnico)
-        +void editarTecnico(Tecnico tecnico)
-        +void excluirTecnico(Tecnico tecnico)
-        +Tecnico consultarTecnico(String cpf)
-        +void abrirChamado(Chamado chamado)
-        +void fecharChamado(Chamado chamado)
-        +void listarChamadosAbertos()
-        +void gerarRelatorioAtendimento()
+        - bool ligado
+        - MutableList~Chamado~ chamados
+        - MutableList~Tecnico~ tecnicos
+        - MutableList~Cliente~ clientes
+        - int proximoIdChamado
+        - int proximoIdCliente
+        - int proximoIdTecnico
+        + bool getLigado()
+        + void desligar()
+        + void listarChamados()
+        + void cadastrarChamado(Chamado)
+        + void removerChamado(int)
+        + void editarNomeChamado(int, String)
+        + void editarDescricaoChamado(int, String)
+        + void editarStatusChamado(int, String)
+        + void mostrarChamado(int)
+        + void listarChamadosDoCliente(int)
+        + void cadastrarTecnico(Tecnico)
+        + void editarTecnicoChamado(int, int)
+        + void listarTecnicos()
+        + void removerTecnico(int)
+        + void editarNomeTecnico(int, String)
+        + void editarEmailTecnico(int, String)
+        + void editarTelefoneTecnico(int, String)
+        + void editarEspecialidadeTecnico(int, String)
+        + void cadastrarCliente(Cliente)
+        + void listarClientes()
+        + void removerCliente(int)
+        + void editarNomeCliente(int, String)
+        + void editarEmailCliente(int, String)
+        + void editarTelefoneCliente(int, String)
+        + void editarEnderecoCliente(int, String)
+        + bool verificarChamados()
+        + bool verificarTecnicos()
+        + bool verificarClientes()
+        + bool existeChamado(int)
+        + bool existeTecnico(int)
+        + bool existeCliente(int)
+    }
+
+    class Main {
+        + void main()
+        + void menuPrincipal()
+        + void menuChamados()
+        + void menuEditarChamado()
+        + void menuTecnicos()
+        + void menuEditarTecnico()
+        + void menuClientes()
+        + void menuEditarCliente()
     }
 
     Pessoa <|-- Cliente
     Pessoa <|-- Tecnico
-    SistemaChamados --> Cliente
-    SistemaChamados --> Tecnico
-    SistemaChamados --> Chamado
+    SistemaChamados "1" -- "*" Chamado : gerencia
+    SistemaChamados "1" -- "*" Cliente : gerencia
+    SistemaChamados "1" -- "*" Tecnico : gerencia
+    Cliente "1" -- "*" Chamado : possui
+    Tecnico "1" -- "*" Chamado : atende
+    Main --> SistemaChamados : usa
 ```
 
 ---
