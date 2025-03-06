@@ -115,8 +115,10 @@ fun menuClientes() {
             "2" -> sistema.cadastrarCliente(Forms.novoCliente())
             "3" -> menuEditarCliente()
             "4" -> sistema.removerCliente(Forms.inputId("Digite o ID do cliente: "))
+            "5" -> sistema.listarChamadosDoCliente(Forms.inputId("Digite o ID do cliente: "))
             else -> println("Comando inválido!")
         }
+        println("\n-------------------------------------------\n")
     }
 }
 
