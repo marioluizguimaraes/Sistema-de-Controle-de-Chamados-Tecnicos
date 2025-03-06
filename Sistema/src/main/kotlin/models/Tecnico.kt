@@ -12,5 +12,4 @@ class Tecnico(
     override  fun toString(): String{
         return ("Id: ${this.id} Nome: ${this.nome}, CPF: ${this.cpf}, Email: ${this.email}, Telefone: ${this.telefone}, Especialidade: ${this.especialidade}\n")
     }
-
 }

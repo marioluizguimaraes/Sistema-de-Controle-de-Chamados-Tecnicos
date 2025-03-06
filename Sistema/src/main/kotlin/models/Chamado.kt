@@ -18,6 +18,4 @@ class Chamado(
                 "Descrição: ${this.descricao}\n" +
                 "Aberto no dia ${this.dataAbertura} | ${this.status}\n") // Chamando status diretamente
     }
-
-    // Falta adicionar a função para inserir chamados na lista de chamados do cliente e técnico
 }
