@@ -106,7 +106,7 @@ fun menuClientes() {
     while (sistema.getLigado()) {
         println("\n-------------------------------------------\n")
         println("Sistema > Clientes")
-        println("[1] Listar Clientes\n[2] Adicionar Cliente\n[3] Editar Cliente\n[4] Remover Cliente\n[0] Voltar")
+        println("[1] Listar Clientes\n[2] Adicionar Cliente\n[3] Editar Cliente\n[4] Remover Cliente\n[5] Listar chamado do Cliente\n[0] Voltar")
         print("Comando: ")
 
         when (readln()) {
@@ -118,7 +118,6 @@ fun menuClientes() {
             "5" -> sistema.listarChamadosDoCliente(Forms.inputId("Digite o ID do cliente: "))
             else -> println("Comando inválido!")
         }
-        println("\n-------------------------------------------\n")
     }
 }
 

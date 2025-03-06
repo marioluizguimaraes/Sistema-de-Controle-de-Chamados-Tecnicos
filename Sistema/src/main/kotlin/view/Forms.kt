@@ -7,7 +7,7 @@ import models.Tecnico
 object Forms {
 
     fun novoCliente(): Cliente {
-        val id = inputId("Digite o ID: ")
+        val id = 0
         val nome = inputText("Digite o nome do cliente: ")
         val cpf = inputText("Digite o CPF do cliente: ")
         val email = inputText("Digite o email do cliente: ")
@@ -19,7 +19,7 @@ object Forms {
     }
 
     fun novoTecnico(): Tecnico {
-        val id = inputId("Digite o ID: ")
+        val id = 0
         val nome = inputText("Digite o nome do Técnico: ")
         val cpf = inputText("Digite o CPF do Técnico: ")
         val email = inputText("Digite o email do Técnico: ")
@@ -31,7 +31,7 @@ object Forms {
     }
 
     fun novoChamado(): Chamado {
-        val id = inputId("Digite o ID: ")
+        val id = 0
         val nome = inputText("Digite o nome do chamado: ")
         val descricao = inputText("Digite a descrição do chamado: ")
         val idCliente = inputId("Digite o ID do Cliente: ")

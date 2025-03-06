@@ -11,6 +11,7 @@ class SistemaChamados {
     private val clientes = mutableListOf<Cliente>()
     private var proximoIdChamado = 1
     private var proximoIdCliente = 1
+    private var proximoIdTecnico = 1
 
     fun getLigado(): Boolean = ligado
     fun desligar() { ligado = false }
@@ -21,9 +22,21 @@ class SistemaChamados {
     }
 
     fun cadastrarChamado(chamado: Chamado) {
+        val cliente = clientes.find { it.id == chamado.idCliente }
+        val tecnico = tecnicos.find { it.id == chamado.idTecnico }
+
+        if (cliente == null) {
+            println("Erro: ID do cliente inválido.")
+            return
+        }
+        if (tecnico == null) {
+            println("Erro: ID do técnico inválido.")
+            return
+        }
+
         chamado.id = proximoIdChamado++
         chamados.add(chamado)
-        adicionarChamadoAoCliente(chamado.idCliente, chamado.id)
+        cliente.chamados.add(chamado.id)
         println("Chamado cadastrado com sucesso!")
     }
 
@@ -70,16 +83,13 @@ class SistemaChamados {
         }
     }
 
-    private fun adicionarChamadoAoCliente(idCliente: Int, idChamado: Int) {
-        clientes.find { it.id == idCliente }?.chamados?.add(idChamado)
-    }
-
     fun listarTecnicos() {
         if (tecnicos.isEmpty()) println("Nenhum técnico cadastrado.")
         else tecnicos.forEach { println(it) }
     }
 
     fun cadastrarTecnico(tecnico: Tecnico) {
+        tecnico.id = proximoIdTecnico++
         tecnicos.add(tecnico)
         println("Técnico cadastrado com sucesso!")
     }

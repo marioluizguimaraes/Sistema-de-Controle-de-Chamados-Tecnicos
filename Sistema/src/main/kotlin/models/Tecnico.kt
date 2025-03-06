@@ -1,7 +1,7 @@
 package models
 
 class Tecnico(
-    val id: Int,
+    var id: Int,
     nome: String,
     cpf: String,
     email: String,
