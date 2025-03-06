@@ -1,7 +1,7 @@
 Claro! Aqui está um README mais estilizado, com uma apresentação mais visual e organizada:
 
 
-# 📞 **Sistema de Gerenciamento de Chamados** 🎯
+# 📞 **Sistema de Gerenciamento de Chamados Técnicos** 🎯
 
 ## 🚀 Descrição
 
